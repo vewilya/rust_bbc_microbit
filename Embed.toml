@@ -5,7 +5,7 @@ chip = "nrf52833_xxAA"
 halt_afterwards = true
 
 [default.rtt]
-enabled = false # disable rtt if you are running in gdb debugging mode!
+enabled = true # disable rtt if you are running in gdb debugging mode!
 
 [default.gdb]
-enabled = true
+enabled = false
