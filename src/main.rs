@@ -11,7 +11,7 @@ use panic_halt as _;
 
 use cortex_m_rt::entry;
 use embedded_hal::{delay::DelayNs, digital::OutputPin};
-use microbit::hal::{gpio, pac, timer};
+use microbit::hal::{gpio, timer};
 
 #[entry]
 fn main() -> ! {
@@ -19,8 +19,6 @@ fn main() -> ! {
     let board = microbit::Board::take().unwrap();
     let mut row1 = board.display_pins.row1.into_push_pull_output(gpio::Level::High);
     let col1 = board.display_pins.col1.into_push_pull_output(gpio::Level::Low);
-    // board.display_pins.col1.set_low().unwrap();
-    // board.display_pins.row1.set_high().unwrap();
 
     let mut timer0 = timer::Timer::new(board.TIMER0); 
 
