@@ -3,15 +3,15 @@
 #![no_std]
 
 use cortex_m::asm;
-use cortex_m_rt::entry;
 
 use microbit as _;
-use microbit::board::Board;
+// use microbit::board::Board;
 use panic_halt as _;
-use rtt_target::{rdbg, rprintln, rtt_init_print};
+// use rtt_target::{rdbg, rprintln, rtt_init_print};
 
+use cortex_m_rt::entry;
 use embedded_hal::{delay::DelayNs, digital::OutputPin};
-use nrf52833_hal::{gpio, pac, timer};
+use microbit::hal::{gpio, pac, timer};
 
 #[entry]
 fn main() -> ! {
