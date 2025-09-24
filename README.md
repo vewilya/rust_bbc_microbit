@@ -9,6 +9,8 @@ I am mainly following the advice found from these two sources:
 
 This is a very basic setup for running Rust on the bbc microbit v2.0 in VSCode.
 
+You can find the schematics for the microbit here: [MB2 Schematics](https://github.com/microbit-foundation/microbit-v2-hardware/blob/main/V2.21/MicroBit_V2.2.1_nRF52820%20schematic.PDF)
+
 ## VSCode Extensions
 
 VSCode Extensions must-have:
