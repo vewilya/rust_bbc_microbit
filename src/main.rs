@@ -16,27 +16,21 @@ use microbit::hal::{gpio, pac, timer};
 #[entry]
 fn main() -> ! {
 
-    // let mut board = Board::take().unwrap();
-    // board.display_pins.col2.set_low().unwrap();
-    // board.display_pins.row2.set_high().unwrap();
+    let board = microbit::Board::take().unwrap();
+    let mut row1 = board.display_pins.row1.into_push_pull_output(gpio::Level::High);
+    let col1 = board.display_pins.col1.into_push_pull_output(gpio::Level::Low);
+    // board.display_pins.col1.set_low().unwrap();
+    // board.display_pins.row1.set_high().unwrap();
 
-    // Access Peripherals Access Crate (PAC)
-    let peripherals = pac::Peripherals::take().unwrap();
-    
-    let p0 = gpio::p0::Parts::new(peripherals.P0);
-    let _row1 = p0.p0_21.into_push_pull_output(gpio::Level::High);
-    let mut row2 = p0.p0_22.into_push_pull_output(gpio::Level::Low);
-    let _col1 = p0.p0_28.into_push_pull_output(gpio::Level::Low);
-
-    let mut timer0 = timer::Timer::new(peripherals.TIMER0); 
+    let mut timer0 = timer::Timer::new(board.TIMER0); 
 
     #[allow(clippy::empty_loop)]
     loop {
         asm::nop();
 
         timer0.delay_ms(500);
-        row2.set_high().unwrap();
+        row1.set_high().unwrap();
         timer0.delay_ms(500);
-        row2.set_low().unwrap();
+        row1.set_low().unwrap();
     }
 }
