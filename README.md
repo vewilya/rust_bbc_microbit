@@ -12,11 +12,13 @@ This is a very basic setup for running Rust on the bbc microbit v2.0 in VSCode.
 ## VSCode Extensions
 
 VSCode Extensions must-have:
+
 [Rust Analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
 
 [Debugger for probe-rs](https://marketplace.visualstudio.com/items?itemName=probe-rs.probe-rs-debugger)
 
 VSCode Extensions nice-to-have:
+
 [Dependi](https://marketplace.visualstudio.com/items?itemName=fill-labs.dependi) <- former crates extension
 
 [Even Better TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml)
