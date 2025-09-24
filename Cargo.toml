@@ -1,0 +1,26 @@
+[package]
+name = "micro"
+version = "0.1.0"
+authors = ["Urs Bollhalder vewilya@me.com"]
+edition = "2024"
+
+[profile.dev]
+opt-level = 0
+debug = true
+
+[dependencies]
+cortex-m-rt = "0.7.5"
+panic-halt = "1.0.0"
+panic-rtt-target = "0.2.0"
+rtt-target = "0.6.1"
+microbit-v2 = "0.15.1"
+embedded-hal = "1.0.0"
+nrf52833-hal = "0.18.0"
+
+[dependencies.nrf52833-pac]
+version = "0.12.2"
+features = ["cortex-m-rt"]
+
+[dependencies.cortex-m]
+version = "0.7.7"
+features = ["inline-asm", "critical-section-single-core"]
