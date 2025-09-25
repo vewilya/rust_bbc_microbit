@@ -17,8 +17,9 @@ use microbit::hal::{gpio, timer};
 fn main() -> ! {
 
     let board = microbit::Board::take().unwrap();
+    let button = board.buttons.button_a;
     let mut row1 = board.display_pins.row1.into_push_pull_output(gpio::Level::High);
-    let col1 = board.display_pins.col1.into_push_pull_output(gpio::Level::Low);
+    let col1 = board.display_pins.col2.into_push_pull_output(gpio::Level::Low);
 
     let mut timer0 = timer::Timer::new(board.TIMER0); 
 
